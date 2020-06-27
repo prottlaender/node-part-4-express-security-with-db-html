@@ -24,6 +24,6 @@ const StartMongoServer = async function() {
 
 };
 
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
 module.exports = StartMongoServer;

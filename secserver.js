@@ -75,7 +75,7 @@ app.use(session({
 
 // middleware to redirect authenticated users to their dashboard
 const redirectDashboard = (req, res, next) => {
-  if (req.session.userId) {
+  if (req.session.userData) {
     res.redirect('/dashboard')
 
   } else {
@@ -85,7 +85,7 @@ const redirectDashboard = (req, res, next) => {
 
 // middleware to redirect not authenticated users to login
 const redirectLogin = (req, res, next) => {
-  if (!req.session.userId) {
+  if (!req.session.userData) {
     res.redirect('/login')
   } else {
     next()

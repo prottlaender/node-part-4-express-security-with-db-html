@@ -1,4 +1,4 @@
-// database/controllers/userController.js
+// database/controllers/userC.js
 
 // load the modules
 const bcrypt = require('bcryptjs');
@@ -33,9 +33,9 @@ module.exports = {
             // if a validation err occur end request and send response
             res.status(400).send({ code: 400, status: 'Bad Request', message: err.message })
           } else {
-            req.session.userId = user._id
+            // req.session.userId = user._id
 
-            var userData = { name: user.name, lastname: user.lastname, email: user.email, role: user.role }
+            var userData = { userId: user._id, name: user.name, lastname: user.lastname, email: user.email, role: user.role }
 
             req.session.userData = userData
 
@@ -52,9 +52,9 @@ module.exports = {
 
       } else {
         if (bcrypt.compareSync(req.body.password, user.password)) {
-          req.session.userId = user._id
+          // req.session.userId = user._id
 
-          var userData = { name: user.name, lastname: user.lastname, email: user.email, role: user.role }
+          var userData = { userId: user._id, name: user.name, lastname: user.lastname, email: user.email, role: user.role }
 
           req.session.userData = userData
 
