@@ -8,7 +8,7 @@ You can read how to install node and npm on Mac OS on [Digitaldocblog](https://d
 - #> cd node-part-4-express-security-with-db-html
 - #> npm install
 - #> nano .env (adapt your environment variables)
-- #> node blog.js
+- #> node secserver.js
 
 **3. Documentation**
 - currently under construction
